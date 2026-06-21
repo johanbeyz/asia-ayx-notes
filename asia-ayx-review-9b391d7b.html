@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解爱游戏体育 – 亚新体育平台介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero 区 */
+        .hero {
+            background: #ffffff;
+            padding: 60px 20px 50px;
+            text-align: center;
+            border-bottom: 1px solid #e6e9ed;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #1a2635;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5b6f82;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            padding: 0 10px;
+        }
+
+        .hero .action-link {
+            display: inline-block;
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 14px 38px;
+            border-radius: 40px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.25s, transform 0.15s;
+            box-shadow: 0 4px 10px rgba(30,58,95,0.12);
+        }
+
+        .hero .action-link:hover {
+            background: #16324a;
+            transform: translateY(-2px);
+        }
+
+        .hero .action-link:active {
+            transform: translateY(0);
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            padding: 30px 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: #1f2a3a;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 3px;
+            background: #3a6b96;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        /* 优势区 (三列) */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .advantage-item {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            padding: 28px 22px 32px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .advantage-item:hover {
+            border-color: #cbd5dd;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1e3a5f;
+        }
+
+        .advantage-item p {
+            font-size: 0.95rem;
+            color: #4a5e72;
+        }
+
+        /* 说明区 (双列) */
+        .info-row {
+            display: flex;
+            gap: 28px;
+            margin: 40px 0 48px;
+        }
+
+        .info-row .card {
+            flex: 1;
+        }
+
+        .info-row .card p {
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+            color: #3d4f62;
+        }
+
+        .info-row .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 32px 0 48px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            padding: 20px 22px;
+            border-radius: 12px;
+            border: 1px solid #e6e9ef;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1e2f44;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .faq-item span {
+            font-size: 0.92rem;
+            color: #4e657a;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin: 40px 0 50px;
+            padding: 28px 0 10px;
+            border-top: 1px solid #dce1e8;
+            text-align: center;
+        }
+
+        .footer-links p {
+            font-size: 0.92rem;
+            color: #5b6f82;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: #1e3a5f;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #1e3a5f;
+        }
+
+        .footer-links .sep {
+            margin: 0 10px;
+            color: #b0bec5;
+        }
+
+        /* 响应式 */
+        @media (max-width: 850px) {
+            .advantages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-row {
+                flex-direction: column;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .advantages {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .card, .advantage-item {
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero 区 -->
+    <section class="hero">
+        <h1>了解爱游戏体育</h1>
+        <p class="sub">
+            一个面向体育资讯与赛事讨论的线上平台，以清晰、客观的方式呈现内容，帮助爱好者获取信息与互动。
+        </p>
+        <a href="https://asia-ayx-sport.com" class="action-link">爱游戏体育</a>
+    </section>
+
+    <div class="container">
+        <!-- 优势区 -->
+        <div class="advantages">
+            <div class="advantage-item">
+                <h3>内容覆盖</h3>
+                <p>涵盖多种体育项目及赛事动态，以资讯聚合方式呈现，方便用户浏览与参考。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>界面简洁</h3>
+                <p>页面结构清晰，减少冗余信息干扰，让访问者能快速定位自己感兴趣的部分。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>持续维护</h3>
+                <p>平台保持更新，注重信息时效性与可读性，努力为体育爱好者提供稳定的阅读环境。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：站点介绍与可信说明 -->
+        <div class="info-row">
+            <div class="card">
+                <h2 class="section-title" style="margin-bottom: 18px;">站点介绍</h2>
+                <p><a href="https://asia-ayx-sport.com" style="color: #1e3a5f; text-decoration: underline;">爱游戏体育</a> 是一个以体育内容为核心的线上平台。运营团队致力于整理来自公开渠道的赛事信息、球队动态与行业观察，为访问者提供整合式阅读体验。</p>
+                <p>平台不承担赛事组织或投注功能，所有内容均基于信息展示与交流目的。我们鼓励用户结合多方来源进行判断，理性看待体育信息。</p>
+            </div>
+            <div class="card">
+                <h2 class="section-title" style="margin-bottom: 18px;">可信说明</h2>
+                <p>本站所有内容均来源于公开资料与合法转载，不涉及任何违规或误导性信息。团队对内容进行基础核查，但不对每一条信息绝对准确性作出承诺。</p>
+                <p>如发现任何内容存在偏差或时效性问题，欢迎通过页面提供的联系方式反馈。我们将定期复核并优化信息呈现方式，以提升平台可信度。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-summary">
+            <h2 class="section-title">常见问题摘要</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <strong>爱游戏体育主要提供哪类内容？</strong>
+                    <span>平台以体育资讯、赛事前瞻、球队数据及行业动态为主，不涉及博彩或投注引导。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>信息多久更新一次？</strong>
+                    <span>团队根据赛事节奏与新闻时效，尽量每日进行内容更新，重要赛事前后会增加整理频率。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>如何确保内容可靠？</strong>
+                    <span>内容来源尽可能标注参考信息，并经过基础编辑核实。用户如有疑问可提交反馈，我们将及时复核调整。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>是否需要注册才能浏览？</strong>
+                    <span>大部分内容无需注册即可阅读。部分互动功能（如评论、收藏）可能需要创建简单账号。</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="footer-links">
+            <p>
+                了解更多体育资讯，欢迎访问 
+                <a href="https://asia-ayx-sport.com">爱游戏体育</a>
+                <span class="sep">·</span>
+                本页面仅作为平台介绍
+            </p>
+            <p style="font-size: 0.85rem; color: #7b8fa2;">
+                爱游戏体育 · 内容仅供参考 · 请合理判断
+            </p>
+        </div>
+    </div>
+</body>
+</html>
