@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c7娱乐 · 一种平实的线上休闲方式</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f6f4f0;
+      color: #2a2826;
+      line-height: 1.7;
+    }
+    .page-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 深色 hero 区 */
+    .hero {
+      background: linear-gradient(145deg, #1e1b1a 0%, #2b2624 100%);
+      color: #e9e2da;
+      padding: 72px 0 80px;
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 48px;
+    }
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 350;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .hero h1 span {
+      color: #d9b382;
+      font-weight: 400;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 680px;
+      color: #ccc3b8;
+      margin-bottom: 10px;
+    }
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #a29587;
+      border-top: 1px solid #3f3935;
+      padding-top: 20px;
+      margin-top: 10px;
+      width: 80px;
+    }
+
+    /* 普通区块 */
+    section {
+      margin-bottom: 56px;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 340;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      border-left: 4px solid #d9b382;
+      padding-left: 16px;
+      color: #2b2624;
+    }
+
+    /* 优势卡片区 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #ffffffec;
+      padding: 28px 20px;
+      border-radius: 28px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+    }
+    .feature-card h3 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #3a322e;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      color: #5e554d;
+      font-size: 0.95rem;
+    }
+
+    /* 说明区 — 穿插一点叙述感 */
+    .narrative-block {
+      background: #f0ebe4;
+      padding: 32px 36px;
+      border-radius: 40px;
+      margin: 30px 0 40px;
+    }
+    .narrative-block p {
+      margin-bottom: 16px;
+      font-size: 1.03rem;
+    }
+    .narrative-block a {
+      color: #b0763b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .narrative-block a:hover {
+      color: #7f5b31;
+    }
+
+    /* 使用场景小清单 */
+    .scene-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin: 28px 0 12px;
+    }
+    .scene-list li {
+      list-style: none;
+      background: #e8e0d6;
+      padding: 4px 14px 4px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      color: #3f3732;
+    }
+    .scene-list li::before {
+      content: "·";
+      margin-right: 8px;
+      color: #b0763b;
+      font-weight: 600;
+    }
+
+    /* faq 摘要 — 克制、不夸张 */
+    .faq-mini {
+      background: #ffffffd9;
+      border-radius: 32px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #e7e0d8;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 450;
+      color: #322c27;
+      margin-bottom: 4px;
+    }
+    .faq-a {
+      color: #5f554b;
+      font-size: 0.96rem;
+      margin-top: 2px;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      text-align: center;
+      padding: 28px 0 40px;
+      border-top: 1px solid #ddd5cb;
+      margin-top: 16px;
+      color: #6c6257;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #b0763b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #7f5b31;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 48px 0 60px; }
+      .hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.35rem; }
+      .narrative-block { padding: 24px 20px; }
+      .faq-mini { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>在线休闲 · <span>c7娱乐</span></h1>
+      <p>一个让人放下匆忙、适度放松的线上角落。<br>不追求喧闹，只在意片刻的专注与平静。</p>
+      <div class="tagline">轻 · 简 · 稳</div>
+    </div>
+  </section>
+
+  <!-- 优势区 —— 侧重实用感受 -->
+  <section>
+    <h2 class="section-title">几个朴素的特点</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>界面不绕</h3>
+        <p>没有复杂跳转，功能入口一目了然。花在寻找上的时间越少，留给放松的精力就越多。</p>
+      </div>
+      <div class="feature-card">
+        <h3>节奏自主</h3>
+        <p>不设强制引导，不弹冗余推送。你可以按自己的步调浏览，随时来，随时停。</p>
+      </div>
+      <div class="feature-card">
+        <h3>选择多样</h3>
+        <p>内容类型覆盖常见休闲需求，既不拥挤也不单调，总有一类让你觉得“还行，看看也无妨”。</p>
+      </div>
+      <div class="feature-card">
+        <h3>安静陪伴</h3>
+        <p>没有夸张的弹窗和闪烁动画，界面用色温和克制，像一本旧杂志，翻起来不累眼。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明区 —— 切入角度：从关键词背后展开叙述 -->
+  <div class="narrative-block">
+    <p>
+      很多人第一次听说 <a href="https://asia-c7play.com">c7娱乐</a> 是在朋友随口一提的对话里，或者某个深夜无聊时偶然滑到。<br>
+      它没有铺天盖地的广告，却慢慢在喜欢“轻量线上消遣”的人群里有了自己的位置。<br>
+      不需要记住复杂的规则，也不用担心进度丢失——它的逻辑更像一本随时可以翻开的笔记本，写几笔、折个角都很自然。
+    </p>
+    <p>
+      从棋牌、休闲竞技到一些偏动脑的小游戏，c7娱乐 涵盖的类型更像一个邻里俱乐部，各取所需。<br>
+      没有强制排名，没有焦虑的倒计时，你大可以把它当成一个数字化的后院，偶尔来坐坐。
+    </p>
+  </div>
+
+  <!-- 场景小提示 —— 用列表展现，代替枯燥段落 -->
+  <section>
+    <h2 class="section-title">常见的打开方式</h2>
+    <ul class="scene-list">
+      <li>午休前花十分钟放松思绪</li>
+      <li>等咖啡或等车时的轻度参与</li>
+      <li>晚上窝在沙发里，不想看长视频的时候</li>
+      <li>跟老友远程小玩一局，顺便聊聊天</li>
+      <li>单纯想换个节奏，不思考输赢</li>
+    </ul>
+    <p style="color:#5e554d; font-size:0.95rem; margin-top:12px;">这些场景的共同点：轻松、低门槛、没有负担。</p>
+  </section>
+
+  <!-- FAQ 摘要 —— 克制、真实 -->
+  <section>
+    <h2 class="section-title">一些常被问到的</h2>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">需要注册很麻烦吗？</div>
+        <div class="faq-a">基本流程很快，手机号或邮箱都可以，没有强制绑定社交账号的步骤。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">内容适合新手吗？</div>
+        <div class="faq-a">大部分模式都包含简明引导，不了解规则也能很快上手。没有上来就高难度的挫败感。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">会不会很占用时间？</div>
+        <div class="faq-a">节奏由你控制，多数单次参与也就十几分钟，也可以随时放下。没有强制连续在线的要求。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">移动端体验怎么样？</div>
+        <div class="faq-a">页面自适应做得不错，手机和电脑上都能正常使用，没有明显缩放的别扭感。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部链接 自然嵌入 a 标签 -->
+  <div class="footer-links">
+    <p>
+      c7娱乐 提供多种线上休闲方式，如果你想了解具体有哪些内容，可以前往 <a href="https://asia-c7play.com">c7娱乐</a> 查看更多介绍。<br>
+      希望每次打开它，都是一段平实的、不赶时间的短暂时光。
+    </p>
+    <p style="margin-top: 18px; font-size: 0.8rem; color: #8c8175;">&copy; 2025 · 简单线上空间</p>
+  </div>
+
+</div>
+</body>
+</html>
